@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="D:\shaba\sem VII\software development\login\Logo1.png">
+
+	<title>Add visitor</title>
+	<link rel="stylesheet" a href="style_addvisitor.css">
+	<style>
+	body {
+        color:white;
+		}
+</style>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<script src="jquery-3.1.1.min.js"></script> 
+<script type="text/javascript">
+$(function () {
+        $("input[name='radio1']").click(function () {
+            if ($("#student").is(":checked")) {
+            	$("#employee1").hide();
+                $("#student1").show();
+            }
+            else if($("#employee").is(":checked")){
+            	$("#student1").hide();
+                $("#employee1").show();
+            } 
+            else if($("#others").is(":checked")){
+                $("#student1").hide();
+                $("#employee1").hide();
+                $("#others1").show();
+            }
+        });
+    });
+
+
+</script>
+</head>
+<body style="padding-left: 20px">
+	
+	<div class="container">
+		<div class="fold">
+		<form action="Insertvisitor.php">
+			<p class="paragraph">Add visitor</p>
+			<input type="text" name="fname" placeholder="👥First name" class="ipt"/>
+			<input type="text" name="lname" placeholder="👥Last name" class="ipt"/>
+			
+			<input type="text" name="phn" placeholder="☎Phone" class="ipt"/>
+			<input type="text" name="doorno" placeholder="🏡Door no" class="ipt"/>
+			
+			<input type="text" name="street" placeholder="🏡Street" class="ipt"/>
+			<input type="text" name="city" placeholder="🏡City" class="ipt"/>
+			<input type="text" name="pin" placeholder="📝Pin code" class="ipt"/>
+			
+			<input type="text" name="purpose" placeholder="📰Purpose" class="ipt"/>
+			<select  name="gender" class="ipt">
+				<option value="" disabled selected>Gender</option>
+  				<option value="male">👨Male</option>
+  				<option value="female">👩Female</option>
+  			</select>
+  			
+    &nbsp;<input type="email" name="email" placeholder="📩mail id" class="ipt">
+    <input type="text" name="vechile_id" placeholder="vechile id" class="ipt">
+    <select name="type_of_vechile" class="ipt">
+				<option value="" disabled selected>Type of vechile</option>
+          <option value="None">None</option>
+  				<option value="Bike">Bike</option>
+  				<option value="Car">Car</option>
+  				<option value="Bus">Bus</option>
+			</select>
+      &nbsp;<input type="text" name="no_of_visitor" placeholder="number of visitor" class="ipt">
+			<!--<br>
+  		        &nbsp;&nbsp;&nbsp;&nbsp;In time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  			<br>-->
+			<style color:white>Intime</style>
+			<br>
+			<lable>To Meet:</lable> &nbsp;&nbsp;&nbsp;&nbsp;
+			<label class="radioContainer">
+				<input type="radio" name="radio1" id="student" value="student">Student
+				<span class="circle"></span>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+			<label class="radioContainer">
+				<input type="radio" name="radio1" id="employee" value="employee">Employee
+				<span class="circle"></span>
+			</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+			<label class="radioContainer">
+  				<input type="radio" name="radio1" id="others" value="others">Others
+  				<span class="circle"></span>
+  		</label>
+
+<!-- Employee Radio button Details-->
+
+	<div id="employee1" style="display: none">
+  <input type="text" name="text1" placeholder="Name of the staff"  class="ipt" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" name="empid" placeholder="id" class="ipt">&nbsp;&nbsp;
+    <select name="typeof_staff" class="ipt" >
+			   	<option value="" disabled selected >Category</option>
+  				<option value=" Teaching">Teaching</option>
+  				<option value="Non-teaching">Non-teaching</option>
+  	</select>
+   &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name ="depat" class="ipt">
+        <option  value="" disabled selected>DEPARTMENT</option>
+			    <option value="CIVIL">CIVIL</option>
+          <option value="EEE">EEE</option>
+          <option value="ECE">ECE</option>
+          <option value="CSE">CSE</option>
+          <option value="MECH">MECH</option>
+          <option value="IT">IT</option>
+		      <option value="BIO-TECH">BIO-TECH</option>
+      </select>
+      <select name="designation" class="ipt">
+        <option value="" disabled selected>Designation</option>
+          <option value="Principal">Principal</option>
+          <option value="HOD">HOD</option>
+          <option value="Professor">Professor</option>
+          <option value="Associate_Prof">Associate_Prof</option>
+          <option value="Assistant_Prof(Sr.grade)">Assistant_Prof(Sr.grade)</option>
+          <option value="Assistant_Prof">Assistant_Prof</option>
+          <br></select>
+   	</div>
+
+<div id="others1" style="display: none">
+      <select name="others" class="ipt" >
+          <option value="" disabled selected >PLACE</option>
+          <option value="TMB_MSEC_001">Bank_id</option>
+          <option value="Post_MSEC_001">Post_Office</option>
+    </select>
+  </div>
+
+  <!-- Student text box details(radoi button)-->
+
+	<div id="student1" style="display: none">  
+	<input type="text" name="person_id" placeholder="admission number" class="ipt">  
+	 <select name="degree" class="ipt" >
+				<option value="" disabled selected><font color="#95a5a6">Degree</font></option>
+  				<option value="UG">UG</option>
+  				<option value="PG">PG</option>
+  	</select>
+  	<input type="text" id="student_name" placeholder="Name" name="name" class="ipt">
+   <select class="ipt" name="department">
+				<option value="" disabled selected>DEPARTMENT</option>
+  				<option value="CIVIL">CIVIL</option>
+  				<option value="EEE">EEE</option>
+  				<option value="ECE">ECE</option>
+  				<option value="CSE">CSE</option>
+  				<option value="MECH">MECH</option>
+  				<option value="IT">IT</option>
+  				<option value="BIO-TECH">BIO-TECH</option>
+			</select>
+   <select class="ipt" name="year">
+				<option value="" disabled selected>YEAR</option>
+  				<option value="I">I</option>
+  				<option value="II">II</option>
+  				<option value="III">III</option>
+  				<option value="IV">IV</option>
+			</select>
+	 &nbsp;&nbsp;<input type="text" name="mailid" placeholder="mail" class="ipt">
+</div>
+			<br>
+  			<br>
+  			<br><br>
+  			<center>
+  			<button class="button">
+  				Add Visitor
+  			</button></center>
+		</form>
+		</div>
+	</div>
+</body>
+</html>

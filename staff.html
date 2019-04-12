@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<link rel="shortcut icon" href="D:\shaba\sem VII\software development\login\Logo1.png">
+ <title>Staff</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="sidestyle.css">
+
+
+<body>
+<div id="grad"><header><a href="staff.html"><img src="D:\shaba\sem VII\software development\login\Logo1.png" width="75" height="75">Staff details..</header></div>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <a href="VisitorHistory.html" class="w3-bar-item w3-button">Visitor History</a>
+  <a href="index.html" class="w3-bar-item w3-button">Logout</a>
+</div>
+
+<div class="w3-emerald">
+  <button class="w3-button w3-emerald w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+  </div>
+<div id='view1' style="display: none;">
+  <input type="text" placeholder="Search by name" id="staff_name" class="ipt" />
+</div>
+     
+<script>
+function Myfunction(){
+  document.getElementById("did").style.setProperty("visibility","visible",null);
+   $("#student1").show();
+}
+
+function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+}
+function closeRightMenu() {	
+    document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+<input type="button" name="Attendance" value="present..!!" class="button">
+<input type="button" name="view" value="Visit History" class="button" onclick="Myfunction()">
+<div id='did' style="visibility:hidden;">
+	<h1>
+		<input type="text" name="byname" placeholder="search by name" class="ipt" >
+		<input type="date" name="bydate" placeholder="date" class="ipt">
+	</h1>
+</div>
+</body>
+</html>
